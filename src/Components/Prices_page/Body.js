@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import "../../index.css";
 import AddItem from './AddItem';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import ExpenseCard from './ExpenseCard';
 
 export class Body extends Component {
 
@@ -9,10 +10,12 @@ export class Body extends Component {
         super(props);
         this.abc = [{
             "title": "First card",
-            "Desc": "This will describe the card here"
+            "desc": "This will describe the card here",
+            "id": 2
         }, {
             "title": "Last card",
-            "Desc": "Alice in wonderland"
+            "desc": "Alice in wonderland",
+            "id": 1
         }];
     }
 
@@ -21,7 +24,7 @@ export class Body extends Component {
         return (
             <div className="body">
                 <div className="mainarea">
-                    {this.abc.map(function (value) { return <>{value.title} <br /></> })}
+                    {this.abc.map(value => <ExpenseCard title={value.title} description={value.desc} />)}
                     <Router>
                         <Route exact path={"/add"} component={AddItem}></Route>
                     </Router>
