@@ -1,13 +1,77 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  user-select: none;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.leftpanel {
+  background-color: #eee;
+  float: left;
+  width: 25%;
+  height: 90vh;
+  padding: 20px;
+  text-align: center;
+}
+
+.body {
+  background-color: #fff;
+  float: left;
+  width: 75%;
+  height: 90vh;
+}
+
+.mainarea {
+  padding: 40px;
+}
+
+.nav {
+  color: #555;
+  box-Shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  position: relative;
+  padding: 15px 20px;
+  text-Align: center;
+  font-weight: 500;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #446;
+  color: #fff;
+}
+
+.addItem {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.3);
+  text-align: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.addItemChild {
+  position: relative;
+  background-color: #fff;
+  margin: auto;
+  width: 500px;
+  top: 40%;
+  transform: translate(0, -40%);
+  padding: 20px;
+  border-radius: 20px;
 }

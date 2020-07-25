@@ -1,20 +1,16 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css'; 
-// import Calendar from 'react-calendar';
+import './App.css';
+import Homepage from './Components/Homepage';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-      </header>
-     
-    </div>
+    <Router>
+      <div>
+        <Route exact path={"/"} component={Homepage}></Route>
+        <Route path = {"/add"} component={Homepage}></Route>
+      </div>
+    </Router>
   );
 }
 
