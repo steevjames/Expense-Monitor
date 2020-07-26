@@ -8,7 +8,6 @@ function App() {
     <Router>
       <div>
         <Route exact path={"/"} component={Homepage}></Route>
-        <Route path = {"/add"} component={Homepage}></Route>
       </div>
     </Router>
   );

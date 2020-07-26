@@ -8,13 +8,13 @@ function ExpenseCard(props) {
         <div className="expenseCard">
             {/* Delete Icon */}
             <div style={{ float: "right" }}>
-                <img src={deleteIcon} style={{ width: "40px", marginLeft: "20px" }} alt="Delete" />
+                <img src={deleteIcon} class="deleteIcon" alt="Delete"  onClick={alert}/>
             </div>
             {/* Card main area */}
             <div style={{ width: "100%" }}>
                 {props.title}
                 <hr style={{ borderTop: "1px solid #ccc" }} />
-                {props.description}
+                {props.description} Rs
             </div>
 
         </div>

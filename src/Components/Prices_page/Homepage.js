@@ -11,15 +11,14 @@ class Homepage extends Component {
         super(props);
         this.state =
         {
-            abc: []
+            expenses: []
         };
     }
 
-    updateFunction(aaa) {
-        let qqq = this.state.abc.concat(aaa);
-        console.log(qqq);
+    updateFunction(data) {
+        let temp = this.state.expenses.concat(data);
         this.setState({
-            abc: qqq
+            expenses: temp
         });
     }
 
@@ -27,8 +26,8 @@ class Homepage extends Component {
         return (
             <div>
                 <Navbar />
-                <Sidebar data={this.state.abc} updateFunction={this.updateFunction.bind(this)} />
-                <Body data={this.state.abc} />
+                <Sidebar data={this.state.expenses} updateFunction={this.updateFunction.bind(this)} />
+                <Body expenses={this.state.expenses} />
                 <Footer />
             </div>
         )

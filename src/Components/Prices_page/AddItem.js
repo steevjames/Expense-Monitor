@@ -1,5 +1,4 @@
 import React from 'react'
-// import { useHistory } from "react-router-dom";
 import "../../index.css"
 
 function AddItem(props) {
@@ -24,13 +23,12 @@ function AddItem(props) {
 
         <div className="addItem"        >
             <div className="addItemChild">
-                <span style={{
-                    color: "#466",
-                    fontSize: "17px",
-                }}>
+                <span style={{ color: "#466", fontSize: "17px", }}>
                     Add New Expense
                     </span>
-                <div onClick={props["toggleFunction"]} style={{ float: "right", fontSize: "25px", color: "#f00" }}>X</div>
+                <div onClick={props["toggleFunction"]} style={{ float: "right", fontSize: "25px", color: "#f00" }}>
+                    X
+                        </div>
                 <hr style={{ borderTop: "1px solid #ccc" }} />
                 <br />
 
@@ -42,12 +40,14 @@ function AddItem(props) {
                     Amount :
                  <input id="expenseamount" type="number" className="inputfield" />
                 </div>
+
                 <button onClick={submitItem}
                     style={{
                         backgroundColor: "#446", color: "#fff", border: "0", padding: "10px 80px",
                         borderRadius: "50px", marginTop: "50px", outline: "0"
-                    }}
-                >Add</button>
+                    }}                >
+                    Add
+                        </button>
             </div>
         </div>
     )
