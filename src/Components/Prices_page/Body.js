@@ -5,26 +5,18 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import ExpenseCard from './ExpenseCard';
 
 export class Body extends Component {
-
     constructor(props) {
         super(props);
-        this.abc = [{
-            "title": "First card",
-            "desc": "This will describe the card here",
-            "id": 2
-        }, {
-            "title": "Last card",
-            "desc": "Alice in wonderland",
-            "id": 1
-        }];
+        console.log("");
     }
 
     render() {
-        console.log(this.abc);
+        this.data = this.props.data;
+
         return (
-            <div className="body">
+            <div className="body" >
                 <div className="mainarea">
-                    {this.abc.map(value => <ExpenseCard title={value.title} description={value.desc} />)}
+                    {this.data.map(value => <ExpenseCard title={value.title} description={value.desc} key={value.id} />)}
                     <Router>
                         <Route exact path={"/add"} component={AddItem}></Route>
                     </Router>
