@@ -16,7 +16,19 @@ class Homepage extends Component {
     }
 
     updateFunction(data) {
+        data["id"] = Math.floor((Math.random() * 1000) + 1);
         let temp = this.state.expenses.concat(data);
+        this.setState({
+            expenses: temp
+        });
+    }
+
+    deleteFunction(id) {
+        let temp = this.state.expenses;
+        for (let i = 0; i < temp.length; i++) {
+            if (temp[i]["id"] == id) temp.splice(i, 1);
+
+        }
         this.setState({
             expenses: temp
         });
@@ -27,7 +39,7 @@ class Homepage extends Component {
             <div>
                 <Navbar />
                 <Sidebar data={this.state.expenses} updateFunction={this.updateFunction.bind(this)} />
-                <Body expenses={this.state.expenses} />
+                <Body expenses={this.state.expenses} deleteFunction={this.deleteFunction.bind(this)} />
                 <Footer />
             </div>
         )

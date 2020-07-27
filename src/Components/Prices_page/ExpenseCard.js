@@ -8,7 +8,7 @@ function ExpenseCard(props) {
         <div className="expenseCard">
             {/* Delete Icon */}
             <div style={{ float: "right" }}>
-                <img src={deleteIcon} class="deleteIcon" alt="Delete"  onClick={alert}/>
+                <img src={deleteIcon} className="deleteIcon" alt="Delete" onClick={() => { props["deleteFunction"](props.id) }} />
             </div>
             {/* Card main area */}
             <div style={{ width: "100%" }}>
