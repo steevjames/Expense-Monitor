@@ -10,7 +10,7 @@ class Homepage extends Component {
     constructor(props) {
         super(props);
         let data = JSON.parse(localStorage.getItem("expenses"));
-        // data= data==null?[]:data
+        data= data==null?[]:data
         console.log(data)
         this.state =
         {
@@ -42,10 +42,7 @@ class Homepage extends Component {
 
     render() {
         return (
-            <div style={{
-                display: "flex",
-                flexDirection: "column"
-            }}>
+            <div style={{display: "flex", flexDirection: "column", height:"100vh", overflow:"hidden"}}>
                 <Header />
                 <div className="body">
                     <Sidebar data={this.state.expenses} updateFunction={this.updateFunction.bind(this)} />

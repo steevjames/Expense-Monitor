@@ -13,8 +13,9 @@ code {
 }
 
 .body {
-  background-color: red;
   overflow: hidden;
+  display: flex;
+  align-items: stretch;
   flex: auto;
 }
 
@@ -30,10 +31,11 @@ code {
   background-color: #fff;
   float: left;
   width: 75%;
+  overflow-y: scroll;
 }
 
 .mainarea {
-  padding: 40px;
+  padding: 0 40px;
 }
 
 .header {
@@ -44,6 +46,7 @@ code {
   padding: 15px 20px;
   text-Align: center;
   font-weight: 500;
+  flex: none;
 }
 
 .footer {
@@ -51,6 +54,7 @@ code {
   padding: 20px;
   background-color: #446;
   color: #fff;
+  flex: none;
 }
 
 .addItem {
@@ -80,7 +84,7 @@ code {
   overflow: hidden;
   margin: 30px 0px;
   padding: 20px;
-  width: 500px;
+  width: 50%;
   border-radius: 10px;
   box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.3);
 }
