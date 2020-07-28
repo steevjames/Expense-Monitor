@@ -15,14 +15,25 @@ class Sidebar extends Component {
     }
 
     render() {
-        const abcc = {
-            backgroundColor: "#446", color: "#fff", border: "0", padding: "10px 20px",
-            borderRadius: "50px", width: "200px", margin: "auto"
+
+        let expense = this.props.data;
+        let sum = 0;
+        for (let i in expense
+        ) {
+            sum = sum + Number(expense[i]["desc"])
         }
         return (
             <div className="leftpanel">
-                {/* <div style={{ height: "200px" }}> </div> */}
-                <div className="addNewButton" style={abcc} onClick={() => this.toggleAdd()}                >
+                <div style={{
+                    margin: "30% 10% 20px 10%", padding: "10px", borderBottom: "1px solid #999", fontSize: "20px"
+                }}>
+                    Total expenditure:
+                    <div class="expenseText">
+                        ₹ {sum}
+                    </div>
+                </div>
+
+                <div className="addNewButton" onClick={() => this.toggleAdd()}                >
                     Add New Item
                 </div>
                 {this.state.checked && <AddItem toggleFunction={this.toggleAdd.bind(this)} updateFunction={this.props.updateFunction} />}

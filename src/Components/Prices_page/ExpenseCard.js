@@ -4,19 +4,24 @@ import deleteIcon from "./delete.png"
 
 function ExpenseCard(props) {
     return (
+        <div class="expenseCardContainer">
+            <div className="expenseCard">
 
-        <div className="expenseCard">
-            {/* Delete Icon */}
-            <div style={{ float: "right" }}>
+                <div style={{ fontSize: "25px", minWidth: "60px" }}>
+                    ₹ {props.description}
+                </div>
+
+                {/* Separating Line */}
+                <div style={{ width: "1.2px", height: "60px", backgroundColor: "#ccd", marginLeft: "20px" }}> </div>
+
+                <div style={{ flex: "auto", marginLeft: "20px", fontSize: "17px" }}>
+                    {props.title}
+                </div>
+
+
                 <img src={deleteIcon} className="deleteIcon" alt="Delete" onClick={() => { props["deleteFunction"](props.id) }} />
-            </div>
-            {/* Card main area */}
-            <div style={{ width: "100%" }}>
-                {props.title}
-                <hr style={{ borderTop: "1px solid #ccc" }} />
-                {props.description} Rs
-            </div>
 
+            </div>
         </div>
     )
 }

@@ -2,9 +2,23 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: atami;
+  src: url(assets/Atami-Regular.woff);
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: atami;
   user-select: none;
 }
 
@@ -12,7 +26,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-.body {
+.pageBody {
   overflow: hidden;
   display: flex;
   align-items: stretch;
@@ -20,15 +34,17 @@ code {
 }
 
 .leftpanel {
-  background-color: #eee;
+  background-color: #e5e5e5;
   float: left;
   width: 25%;
   padding: 20px;
   text-align: center;
+  z-index: 1;
+  transition: all .2s;
 }
 
 .rightPortion {
-  background-color: #fff;
+  background-color: #eee;
   float: left;
   width: 75%;
   overflow-y: scroll;
@@ -47,14 +63,20 @@ code {
   text-Align: center;
   font-weight: 500;
   flex: none;
+  transition: transform .5s;
+}
+
+.header:hover, .header:active {
+  transform: scale(1.1);
 }
 
 .footer {
   text-align: center;
   padding: 20px;
-  background-color: #446;
+  background-color: #444;
   color: #fff;
   flex: none;
+  font-size: 12px;
 }
 
 .addItem {
@@ -66,6 +88,7 @@ code {
   left: 0;
   right: 0;
   z-index: 3;
+  animation: fadein .5s;
 }
 
 .addItemChild {
@@ -80,18 +103,38 @@ code {
 }
 
 .expenseCard {
-  box-shadow: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  animation: all fadein 2s;
+}
+
+.expenseCardContainer {
+  box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 15px;
+  width: 60%;
   overflow: hidden;
   margin: 30px 0px;
-  padding: 20px;
-  width: 50%;
-  border-radius: 10px;
-  box-shadow: 0px 8px 10px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 10px;
+  transition: all .3s;
+  color: #444;
+}
+
+.expenseCardContainer:hover {
+  color: #680;
+  transform: scale(1.05);
 }
 
 .deleteIcon {
   width: 40px;
   margin-left: 20px;
+  transition: all .5s;
+}
+
+.deleteIcon:hover {
+  width: 50px;
 }
 
 .formItem {
@@ -106,4 +149,32 @@ code {
   border-radius: 20px;
   padding: 10px 20px;
   outline: thin;
+}
+
+.addNewButton {
+  background-Color: #446;
+  color: #fff;
+  border: "0";
+  padding: 10px 20px;
+  border-Radius: 50px;
+  width: 200px;
+  margin: auto;
+  transition: all .2s;
+}
+
+.addNewButton:hover .addNewButton:active {
+  transform: scale(1.1);
+  background-Color: #066;
+}
+
+.expenseText {
+  font-size: 30px;
+  color: #f00;
+  padding: 10px;
+  animation: fadein .5s;
+  transition: all .5s;
+}
+
+.expenseText:hover, .expenseText:active {
+  transform: scale(1.4);
 }

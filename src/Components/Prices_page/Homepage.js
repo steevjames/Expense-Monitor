@@ -11,7 +11,6 @@ class Homepage extends Component {
         super(props);
         let data = JSON.parse(localStorage.getItem("expenses"));
         data= data==null?[]:data
-        console.log(data)
         this.state =
         {
             expenses: data
@@ -31,7 +30,7 @@ class Homepage extends Component {
     deleteFunction(id) {
         let temp = this.state.expenses;
         for (let i = 0; i < temp.length; i++) {
-            if (temp[i]["id"] == id) temp.splice(i, 1);
+            if (temp[i]["id"] === id) temp.splice(i, 1);
 
         }
         this.setState({
@@ -44,7 +43,7 @@ class Homepage extends Component {
         return (
             <div style={{display: "flex", flexDirection: "column", height:"100vh", overflow:"hidden"}}>
                 <Header />
-                <div className="body">
+                <div className="pageBody">
                     <Sidebar data={this.state.expenses} updateFunction={this.updateFunction.bind(this)} />
                     <RightPortion expenses={this.state.expenses} deleteFunction={this.deleteFunction.bind(this)} />
                 </div>
