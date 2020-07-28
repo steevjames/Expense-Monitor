@@ -106,7 +106,6 @@ code {
   overflow: hidden;
   display: flex;
   align-items: center;
-  animation: all fadein 2s;
 }
 
 .expenseCardContainer {
@@ -120,6 +119,7 @@ code {
   box-shadow: 10px;
   transition: all .3s;
   color: #444;
+  animation: all fadein 2s;
 }
 
 .expenseCardContainer:hover {
@@ -162,7 +162,7 @@ code {
   transition: all .2s;
 }
 
-.addNewButton:hover .addNewButton:active {
+.addNewButton:hover, .addNewButton:active {
   transform: scale(1.1);
   background-Color: #066;
 }
