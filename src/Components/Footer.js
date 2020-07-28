@@ -3,7 +3,7 @@ import React from 'react'
 function Footer() {
     return (
         <div className="footer">
-            ___ No Copyrights ___
+         No Copyrights 2020
         </div>
     )
 }

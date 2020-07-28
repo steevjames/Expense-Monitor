@@ -25,7 +25,7 @@ class Sidebar extends Component {
         return (
             <div className="leftpanel">
                 <div style={{
-                    margin: "30% 10% 20px 10%", padding: "10px", borderBottom: "1px solid #999", fontSize: "20px"
+                    margin: "0% 10% 20px 10%", padding: "10px", borderBottom: "1px solid #999", fontSize: "20px"
                 }}>
                     Total expenditure:
                     <div class="expenseText">

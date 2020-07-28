@@ -37,7 +37,7 @@ code {
   background-color: #e5e5e5;
   float: left;
   width: 25%;
-  padding: 20px;
+  padding: 15vh 20px 20px 20px;
   text-align: center;
   z-index: 1;
   transition: all .2s;
@@ -60,8 +60,7 @@ code {
   z-index: 2;
   position: relative;
   padding: 15px 20px;
-  text-Align: center;
-  font-weight: 500;
+  text-Align: left;
   flex: none;
   transition: transform .5s;
 }
@@ -71,7 +70,7 @@ code {
 }
 
 .footer {
-  text-align: center;
+  text-align: left;
   padding: 20px;
   background-color: #444;
   color: #fff;
@@ -95,7 +94,7 @@ code {
   position: relative;
   background-color: #fff;
   margin: auto;
-  width: 500px;
+  width: 35%;
   top: 40%;
   transform: translate(0, -40%);
   padding: 20px;
@@ -119,7 +118,7 @@ code {
   box-shadow: 10px;
   transition: all .3s;
   color: #444;
-  animation: all fadein 2s;
+  animation: fadein 1s;
 }
 
 .expenseCardContainer:hover {
@@ -177,4 +176,33 @@ code {
 
 .expenseText:hover, .expenseText:active {
   transform: scale(1.4);
+}
+
+@media only screen and (max-width: 600px) {
+  .pageBody {
+    display: block;
+    overflow-y: auto;
+  }
+  .leftpanel {
+    width: 100%;
+    float: none;
+  }
+  .rightPortion {
+    width: 100%;
+    float: none;
+    overflow: hidden;
+  }
+  .expenseCardContainer {
+    width: 100%;
+    padding: 0 20px;
+  }
+  .mainarea {
+    padding: 0 15px;
+  }
+  .leftpanel {
+    padding: 20px 20px 20px 20px;
+  }
+  .addItemChild {
+    width: 90%;
+  }
 }

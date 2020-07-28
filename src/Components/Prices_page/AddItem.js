@@ -15,7 +15,7 @@ function AddItem(props) {
             return;
         }
         console.log(title, amount);
-        props["updateFunction"]({ "title": title, "desc": amount});
+        props["updateFunction"]({ "title": title, "desc": amount });
         props["toggleFunction"]()
     }
 
@@ -23,12 +23,14 @@ function AddItem(props) {
 
         <div className="addItem"        >
             <div className="addItemChild">
-                <span style={{ color: "#466", fontSize: "17px", }}>
-                    Add New Expense
-                    </span>
-                <div onClick={props["toggleFunction"]} style={{ float: "right", fontSize: "25px", color: "#f00" }}>
-                    X
+                <div style={{ display: "flex", alignItems:"Center" }}>
+                    <div style={{ color: "#466", fontSize: "17px", flex: 1 }}>
+                        Add New Expense
+                    </div>
+                    <div onClick={props["toggleFunction"]} style={{ float: "right", fontSize: "30px", color: "#f00" }}>
+                        X
                         </div>
+                </div>
                 <hr style={{ borderTop: "1px solid #ccc" }} />
                 <br />
 
