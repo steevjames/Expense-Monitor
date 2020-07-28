@@ -3,12 +3,11 @@ import "../../index.css";
 import ExpenseCard from './ExpenseCard';
 
 
-function Body(props) {
+function RightPortion(props) {
     let expenses = props.expenses
     return (
-        <div className="body" >
+        <div className="rightPortion" >
             <div className="mainarea">
-                
                 {expenses.map(value => <ExpenseCard title={value.title} description={value.desc} key={value.id}
                     id={value.id} deleteFunction={props.deleteFunction} />)}
                 {expenses.length === 0 ? "No items found" : ""}
@@ -17,4 +16,4 @@ function Body(props) {
     )
 }
 
-export default Body
+export default RightPortion

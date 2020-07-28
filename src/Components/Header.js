@@ -2,13 +2,13 @@ import React from 'react';
 import logo from "../logo.png";
 import "../index.css";
 
-function Navbar() {
+function Header() {
     return (
-        <div className="nav">
+        <div className="header">
             <img src={logo} style={{ width: "30px", verticalAlign: "middle", marginRight: "10px" }} alt="" />
-             Price Tracker
+             Expense Tracker
         </div>
     )
 }
 
-export default Navbar
+export default Header

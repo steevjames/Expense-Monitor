@@ -21,7 +21,7 @@ class Sidebar extends Component {
         }
         return (
             <div className="leftpanel">
-                <div style={{ height: "200px" }}> </div>
+                {/* <div style={{ height: "200px" }}> </div> */}
                 <div className="addNewButton" style={abcc} onClick={() => this.toggleAdd()}                >
                     Add New Item
                 </div>

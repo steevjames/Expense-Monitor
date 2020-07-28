@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Sidebar from './Sidebar';
-import Body from "./Body";
-import Navbar from "../Navbar";
+import RightPortion from "./RightPortion";
+import Header from "../Header";
 import Footer from '../Footer';
 
 
@@ -42,10 +42,15 @@ class Homepage extends Component {
 
     render() {
         return (
-            <div>
-                <Navbar />
-                <Sidebar data={this.state.expenses} updateFunction={this.updateFunction.bind(this)} />
-                <Body expenses={this.state.expenses} deleteFunction={this.deleteFunction.bind(this)} />
+            <div style={{
+                display: "flex",
+                flexDirection: "column"
+            }}>
+                <Header />
+                <div className="body">
+                    <Sidebar data={this.state.expenses} updateFunction={this.updateFunction.bind(this)} />
+                    <RightPortion expenses={this.state.expenses} deleteFunction={this.deleteFunction.bind(this)} />
+                </div>
                 <Footer />
             </div>
         )
