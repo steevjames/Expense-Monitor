@@ -9,11 +9,15 @@ class Homepage extends Component {
 
     constructor(props) {
         super(props);
+        let data = JSON.parse(localStorage.getItem("expenses"));
+        // data= data==null?[]:data
+        console.log(data)
         this.state =
         {
-            expenses: []
+            expenses: data
         };
     }
+
 
     updateFunction(data) {
         data["id"] = Math.floor((Math.random() * 1000) + 1);
@@ -21,6 +25,7 @@ class Homepage extends Component {
         this.setState({
             expenses: temp
         });
+        localStorage.setItem("expenses", JSON.stringify(temp));
     }
 
     deleteFunction(id) {
@@ -32,6 +37,7 @@ class Homepage extends Component {
         this.setState({
             expenses: temp
         });
+        localStorage.setItem("expenses", JSON.stringify(temp));
     }
 
     render() {
