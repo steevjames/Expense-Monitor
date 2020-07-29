@@ -15,7 +15,7 @@ function AddItem(props) {
             return;
         }
         console.log(title, amount);
-        props["updateFunction"]({ "title": title, "desc": amount });
+        props["updateFunction"]({ "title": title, "amount": amount });
         props["toggleFunction"]()
     }
 

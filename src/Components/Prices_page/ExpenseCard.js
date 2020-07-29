@@ -4,11 +4,11 @@ import deleteIcon from "./delete.png"
 
 function ExpenseCard(props) {
     return (
-        <div class="expenseCardContainer">
+        <div className="expenseCardContainer">
             <div className="expenseCard">
 
                 <div style={{ fontSize: "25px", minWidth: "60px" }}>
-                    ₹ {props.description}
+                    ₹ {props.amount}
                 </div>
 
                 {/* Separating Line */}

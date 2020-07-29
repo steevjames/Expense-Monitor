@@ -9,20 +9,28 @@ class Homepage extends Component {
 
     constructor(props) {
         super(props);
-        let data = JSON.parse(localStorage.getItem("expenses"));
-        data= data==null?[]:data
+        this.data = JSON.parse(localStorage.getItem("expenses"));
+        this.data = this.data ?? {}
+        let date = new Date()
+        this.day = (date.getDate() + 1).toString().padStart(2, "0")
+        this.month = (date.getMonth() + 1).toString().padStart(2, "0");
+        this.year = date.getFullYear();
+        this.data[this.year] = this.data[this.year] ?? {}
+        this.data[this.year][this.month] = this.data[this.year][this.month] ?? {}
+        this.data[this.year][this.month][this.day] = this.data[this.year][this.month][this.day] ?? []
         this.state =
         {
-            expenses: data
+            expenses: this.data[this.year][this.month][this.day]
         };
     }
 
 
-    updateFunction(data) {
-        data["id"] = Math.floor((Math.random() * 1000) + 1);
-        let temp = this.state.expenses.concat(data);
+    updateFunction(inputData) {
+        inputData["id"] = Math.floor((Math.random() * 1000) + 1);
+        let temp = this.data
+        temp[this.year][this.month][this.day] = this.state.expenses.concat(inputData);
         this.setState({
-            expenses: temp
+            expenses: temp[this.year][this.month][this.day]
         });
         localStorage.setItem("expenses", JSON.stringify(temp));
     }
@@ -41,10 +49,10 @@ class Homepage extends Component {
 
     render() {
         return (
-            <div style={{display: "flex", flexDirection: "column", height:"100vh", overflow:"hidden"}}>
+            <div style={{ display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
                 <Header />
                 <div className="pageBody">
-                    <Sidebar data={this.state.expenses} updateFunction={this.updateFunction.bind(this)} />
+                    <Sidebar data={this.data} updateFunction={this.updateFunction.bind(this)} />
                     <RightPortion expenses={this.state.expenses} deleteFunction={this.deleteFunction.bind(this)} />
                 </div>
                 <Footer />
