@@ -12,7 +12,7 @@ function RightPortion(props) {
                     id={value.id} deleteFunction={props.deleteFunction} />)}
                 {expenses.length === 0 ?
                     <div style={{
-                        fontSize: "20px", padding: "20px", color: "#444",
+                        fontSize: "20px", padding: "20px", color: "#444", animation:"fadein 2s",
                         marginLeft: "30%", marginTop: "10%", transform: "translate(-30%,-10%)"
                     }}>
                         No items found

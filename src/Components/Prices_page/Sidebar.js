@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import "../../index.css";
 import AddItem from './AddItem';
+import Calendar from 'react-calendar';
+import CustomCalendar from './Calendar/calendar';
 
 class Sidebar extends Component {
     constructor(props) {
@@ -24,6 +26,7 @@ class Sidebar extends Component {
         }
         return (
             <div className="leftpanel">
+                {/* <CustomCalendar/> */}
                 <div style={{
                     margin: "0% 10% 20px 10%", padding: "10px", borderBottom: "1px solid #999", fontSize: "20px"
                 }}>
@@ -34,7 +37,7 @@ class Sidebar extends Component {
                 </div>
 
                 <div className="addNewButton" onClick={() => this.toggleAdd()}                >
-                    Add New Item
+                    Add Expense
                 </div>
                 {this.state.checked && <AddItem toggleFunction={this.toggleAdd.bind(this)} updateFunction={this.props.updateFunction} />}
             </div>

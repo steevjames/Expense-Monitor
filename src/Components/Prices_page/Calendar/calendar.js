@@ -6,7 +6,7 @@ function CustomCalendar() {
     return (
         <div
         
-        ><Calendar onChange={value=>alert(value.getDate())}/></div>
+        ><Calendar onChange={value=>alert(value.toLocaleString())}/></div>
     )
 }
 

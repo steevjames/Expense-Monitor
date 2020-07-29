@@ -20,6 +20,7 @@ body {
   margin: 0;
   font-family: atami;
   user-select: none;
+  background-color: #eee;
 }
 
 code {
@@ -37,7 +38,7 @@ code {
   background-color: #e5e5e5;
   float: left;
   width: 25%;
-  padding: 15vh 20px 20px 20px;
+  padding: 20px 20px 20px 20px;
   text-align: center;
   z-index: 1;
   transition: all .2s;
@@ -58,15 +59,16 @@ code {
   color: #555;
   box-Shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.3);
   z-index: 2;
+  background-color: #fff;
   position: relative;
   padding: 15px 20px;
   text-Align: left;
   flex: none;
-  transition: transform .5s;
+  transition: all .5s;
 }
 
 .header:hover, .header:active {
-  transform: scale(1.1);
+  padding-left: 50px;
 }
 
 .footer {
@@ -127,7 +129,7 @@ code {
 }
 
 .deleteIcon {
-  width: 40px;
+  width: 30px;
   margin-left: 20px;
   transition: all .5s;
 }
@@ -145,7 +147,7 @@ code {
   margin: 15px;
   border: 0px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .4);
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px 20px;
   outline: thin;
 }
@@ -156,7 +158,7 @@ code {
   border: "0";
   padding: 10px 20px;
   border-Radius: 50px;
-  width: 200px;
+  max-width: 250px;
   margin: auto;
   transition: all .2s;
 }
@@ -170,7 +172,7 @@ code {
   font-size: 30px;
   color: #f00;
   padding: 10px;
-  animation: fadein .5s;
+  animation: fadein 2s;
   transition: all .5s;
 }
 
@@ -186,6 +188,7 @@ code {
   .leftpanel {
     width: 100%;
     float: none;
+    background-color: #eee;
   }
   .rightPortion {
     width: 100%;

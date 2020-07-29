@@ -23,7 +23,7 @@ function AddItem(props) {
 
         <div className="addItem"        >
             <div className="addItemChild">
-                <div style={{ display: "flex", alignItems:"Center" }}>
+                <div style={{ display: "flex", alignItems: "Center" }}>
                     <div style={{ color: "#466", fontSize: "17px", flex: 1 }}>
                         Add New Expense
                     </div>
@@ -35,21 +35,17 @@ function AddItem(props) {
                 <br />
 
                 <div className="formItem">
-                    Expense :
-                     <input id="expensetitle" type="text" className="inputfield" />
+                    Expense Title :
+                     <input id="expensetitle" type="text" className="inputfield" autoComplete="off" />
                 </div>
                 <div className="formItem">
-                    Amount :
+                    Amount (₹) :
                  <input id="expenseamount" type="number" className="inputfield" />
                 </div>
-
-                <button onClick={submitItem}
-                    style={{
-                        backgroundColor: "#446", color: "#fff", border: "0", padding: "10px 80px",
-                        borderRadius: "50px", marginTop: "50px", outline: "0"
-                    }}                >
+                <br /><br />
+                <div onClick={submitItem} className="addNewButton">
                     Add
-                        </button>
+                        </div>
             </div>
         </div>
     )
