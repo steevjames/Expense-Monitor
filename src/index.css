@@ -29,7 +29,7 @@ code {
 
 .pageBody {
   overflow: auto;
-  display: flex;
+  display: block;
   align-items: stretch;
   flex: auto;
 }
@@ -201,10 +201,31 @@ code {
   color: #466;
 }
 
+.homePage {
+  display: flex;
+  flex-Direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.noItemsFound {
+  font-Size: 15px;
+  padding: 20px;
+  color: #444;
+  animation: fadein 2s;
+  text-align: center;
+}
+
 @media only screen and (max-width: 600px) {
+  .header {
+    padding: 10px;
+  }
+  .homePage {
+    height: auto;
+  }
   .pageBody {
     display: block;
-    overflow-y: auto;
+    overflow: hidden;
   }
   .leftpanel {
     width: 100%;

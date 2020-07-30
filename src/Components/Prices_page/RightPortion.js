@@ -12,10 +12,7 @@ function RightPortion(props) {
                 {expenses.map(value => <ExpenseCard title={value.title} amount={value.amount} key={value.id}
                     id={value.id} deleteFunction={props.deleteFunction} />)}
                 {expenses.length === 0 ?
-                    <div style={{
-                        fontSize: "20px", padding: "20px", color: "#444", animation:"fadein 2s",
-                        marginLeft: "30%", marginTop: "10%", transform: "translate(-30%,-10%)"
-                    }}>
+                    <div className="noItemsFound">
                         No items found
                      </div> : ""}
             </div>

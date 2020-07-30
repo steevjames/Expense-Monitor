@@ -62,7 +62,7 @@ class Homepage extends Component {
 
     render() {
         return (
-            <div style={{ display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
+            <div className="homePage">
                 <Header />
                 <div className="pageBody">
                     {/* <button onClick={() => this.changeDate(new Date('July 25, 2020 23:15:30'))}></button> */}
