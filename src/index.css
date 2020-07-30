@@ -215,7 +215,6 @@ code {
     width: 100%;
     float: none;
     overflow: hidden;
-    padding-bottom: 30px;
   }
   .footer {
     display: none;
@@ -225,7 +224,7 @@ code {
     padding: 15px 20px;
   }
   .mainarea {
-    padding: 0 15px;
+    padding: 0 15px 30px 15px;
   }
   .leftpanel {
     padding: 20px 20px 20px 20px;
