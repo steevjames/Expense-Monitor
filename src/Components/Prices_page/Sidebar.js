@@ -27,24 +27,21 @@ class Sidebar extends Component {
             todaySum = todaySum + Number(expense[this.year][this.month][this.day][i]["amount"])
         }
         for (let i in expense[this.year][this.month]) {
-            for (let j in expense[this.year][this.month][i])
-            {
-                console.log(expense[this.year][this.month][i][j],"is it")
+            for (let j in expense[this.year][this.month][i]) {
+                console.log(expense[this.year][this.month][i][j], "is it")
                 monthSum += Number(expense[this.year][this.month][i][j]["amount"])
             }
         }
         return (
             <div className="leftpanel">
-                <CustomCalendar changeDate={this.props.changeDate}/>
-                <div style={{
-                    margin: "0% 10% 20px 10%", padding: "10px", borderBottom: "1px solid #999", fontSize: "20px"
-                }}>
+                <CustomCalendar changeDate={this.props.changeDate} />
+                <div className="sidebarLower">
                     Month Total:
                     <div className="expenseText">
                         ₹ {monthSum}
                     </div>
 
-                    Todays total expenditure:
+                    Todays total:
                     <div className="expenseText">
                         ₹ {todaySum}
                     </div>

@@ -115,7 +115,7 @@ code {
   border-radius: 10px;
   background-color: #fff;
   padding: 15px;
-  width: 60%;
+  width: 55%;
   overflow: hidden;
   margin: 30px 0px;
   box-shadow: 10px;
@@ -127,6 +127,11 @@ code {
 .expenseCardContainer:hover {
   color: #680;
   transform: scale(1.05);
+}
+
+.expenseCardLeft {
+  font-size: 25px;
+  min-width: 60px;
 }
 
 .deleteIcon {
@@ -159,7 +164,7 @@ code {
   border: "0";
   padding: 10px 20px;
   border-Radius: 50px;
-  max-width: 250px;
+  max-width: 220px;
   margin: auto;
   transition: all .2s;
 }
@@ -170,7 +175,7 @@ code {
 }
 
 .expenseText {
-  font-size: 30px;
+  font-size: 25px;
   color: #f00;
   padding: 10px;
   animation: fadein 2s;
@@ -179,6 +184,21 @@ code {
 
 .expenseText:hover, .expenseText:active {
   transform: scale(1.4);
+}
+
+.expenseCardSeparator {
+  width: 1.2px;
+  height: 60px;
+  background-Color: #ccd;
+  margin-Left: 20px;
+}
+
+.sidebarLower {
+  margin: 15px 10% 20px 10%;
+  padding: 10px;
+  border-bottom: 1px solid #999;
+  font-size: 17px;
+  color: #466;
 }
 
 @media only screen and (max-width: 600px) {
@@ -195,10 +215,14 @@ code {
     width: 100%;
     float: none;
     overflow: hidden;
+    padding-bottom: 30px;
+  }
+  .footer {
+    display: none;
   }
   .expenseCardContainer {
     width: 100%;
-    padding: 0 20px;
+    padding: 15px 20px;
   }
   .mainarea {
     padding: 0 15px;
@@ -206,7 +230,27 @@ code {
   .leftpanel {
     padding: 20px 20px 20px 20px;
   }
+  .sidebarLower {
+    font-size: 14px;
+  }
+  .expenseText {
+    font-size: 17px;
+  }
+  .expenseCardLeft {
+    min-width: 30px;
+    font-size: 15px;
+  }
+  .expenseCardSeparator {
+    height: 30px;
+  }
   .addItemChild {
     width: 90%;
+  }
+  .addNewButton {
+    padding: 10px 0;
+    font-size: 13px;
+  }
+  .deleteIcon {
+    width: 20px;
   }
 }

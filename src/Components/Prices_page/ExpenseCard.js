@@ -7,12 +7,12 @@ function ExpenseCard(props) {
         <div className="expenseCardContainer">
             <div className="expenseCard">
 
-                <div style={{ fontSize: "25px", minWidth: "60px" }}>
+                <div className="expenseCardLeft">
                     ₹ {props.amount}
                 </div>
 
                 {/* Separating Line */}
-                <div style={{ width: "1.2px", height: "60px", backgroundColor: "#ccd", marginLeft: "20px" }}> </div>
+                <div className="expenseCardSeparator"> </div>
 
                 <div style={{ flex: "auto", marginLeft: "20px", fontSize: "17px" }}>
                     {props.title}
