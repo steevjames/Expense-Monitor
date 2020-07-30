@@ -11,10 +11,10 @@ class Homepage extends Component {
         super(props);
         this.data = JSON.parse(localStorage.getItem("expenses"));
         this.data = this.data ?? {}
-        let date = new Date()
-        this.day = (date.getDate() + 1).toString().padStart(2, "0")
-        this.month = (date.getMonth() + 1).toString().padStart(2, "0");
-        this.year = date.getFullYear();
+        this.date = new Date()
+        this.day = (this.date.getDate() + 1).toString().padStart(2, "0")
+        this.month = (this.date.getMonth() + 1).toString().padStart(2, "0");
+        this.year = this.date.getFullYear();
         this.data[this.year] = this.data[this.year] ?? {}
         this.data[this.year][this.month] = this.data[this.year][this.month] ?? {}
         this.data[this.year][this.month][this.day] = this.data[this.year][this.month][this.day] ?? []
@@ -22,6 +22,19 @@ class Homepage extends Component {
         {
             expenses: this.data[this.year][this.month][this.day]
         };
+    }
+
+    changeDate(date) {
+        this.date=date;
+        this.day = (date.getDate() + 1).toString().padStart(2, "0")
+        this.month = (date.getMonth() + 1).toString().padStart(2, "0");
+        this.year = date.getFullYear();
+        this.data[this.year] = this.data[this.year] ?? {}
+        this.data[this.year][this.month] = this.data[this.year][this.month] ?? {}
+        this.data[this.year][this.month][this.day] = this.data[this.year][this.month][this.day] ?? []
+        this.setState({
+            expenses: this.data[this.year][this.month][this.day]
+        })
     }
 
 
@@ -52,7 +65,8 @@ class Homepage extends Component {
             <div style={{ display: "flex", flexDirection: "column", height: "100vh", overflow: "hidden" }}>
                 <Header />
                 <div className="pageBody">
-                    <Sidebar data={this.data} updateFunction={this.updateFunction.bind(this)} />
+                    {/* <button onClick={() => this.changeDate(new Date('July 25, 2020 23:15:30'))}></button> */}
+                    <Sidebar data={this.data} date={this.date} updateFunction={this.updateFunction.bind(this)} changeDate={this.changeDate.bind(this)}/>
                     <RightPortion expenses={this.state.expenses} deleteFunction={this.deleteFunction.bind(this)} />
                 </div>
                 <Footer />

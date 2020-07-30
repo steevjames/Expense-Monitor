@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import "../../index.css";
 import AddItem from './AddItem';
-import Calendar from 'react-calendar';
 import CustomCalendar from './Calendar/calendar';
 
 class Sidebar extends Component {
@@ -18,7 +17,7 @@ class Sidebar extends Component {
 
     render() {
         let expense = this.props.data;
-        let date = new Date()
+        let date = this.props.date
         this.day = (date.getDate() + 1).toString().padStart(2, "0")
         this.month = (date.getMonth() + 1).toString().padStart(2, "0");
         this.year = date.getFullYear();
@@ -36,7 +35,7 @@ class Sidebar extends Component {
         }
         return (
             <div className="leftpanel">
-                {/* <CustomCalendar/> */}
+                <CustomCalendar changeDate={this.props.changeDate}/>
                 <div style={{
                     margin: "0% 10% 20px 10%", padding: "10px", borderBottom: "1px solid #999", fontSize: "20px"
                 }}>
