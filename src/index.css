@@ -41,6 +41,7 @@ code {
   padding: 20px 20px 20px 20px;
   text-align: center;
   z-index: 1;
+  height: 100%;
   transition: all .2s;
   overflow-y: auto;
 }
@@ -49,6 +50,7 @@ code {
   background-color: #eee;
   float: left;
   width: 75%;
+  height: 100%;
   overflow-y: scroll;
 }
 
@@ -229,12 +231,14 @@ code {
   }
   .leftpanel {
     width: 100%;
+    height: auto;
     float: none;
     background-color: #eee;
   }
   .rightPortion {
     width: 100%;
     float: none;
+    height: auto;
     overflow: hidden;
   }
   .footer {
