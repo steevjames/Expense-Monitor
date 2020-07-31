@@ -213,9 +213,9 @@ code {
 .noItemsFound {
   font-Size: 15px;
   padding: 20px;
+  padding-top: 80px;
   color: #444;
   animation: fadein 2s;
-  text-align: center;
 }
 
 @media only screen and (max-width: 600px) {
@@ -277,5 +277,9 @@ code {
   }
   .deleteIcon {
     width: 20px;
+  }
+  .noItemsFound {
+    padding: 20px;
+    text-align: center;
   }
 }
